@@ -1,0 +1,49 @@
+{
+    "title": "portfolio",
+    "name": "portfolio",
+    "version": "1.0.0",
+    "source": "src/index.html.twig",
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "scripts": {
+        "watch": "parcel",
+        "build": "parcel build",
+        "lint:twig": "twiglint src/**/*.twig",
+        "lint:js": "eslint src/**/*.js --fix",
+        "lint:scss": "stylelint src/**/*.scss",
+        "lint": "npm run lint:twig && npm run lint:js && npm run lint:scss"
+    },
+    "description": "",
+    "keywords": [
+        "css",
+        "sass",
+        "html",
+        "responsive"
+    ],
+    "homepage": "https://",
+    "license": "MIT",
+    "author": "Azdracito",
+    "contributors": [
+        "Azdracito (https://)",
+        "David Miller (https://davidmiller.io/)"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AzdrHA/portfolio"
+    },
+    "dependencies": {
+        "@christian-beckmann/parcel-transformer-twig": "^0.1.1",
+        "@fortawesome/fontawesome-free": "^6.5.1",
+        "bootstrap": "^5.3.2"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.11.0",
+        "@parcel/transformer-typescript-types": "^2.11.0",
+        "eslint": "^8.56.0",
+        "eslint-config-google": "^0.14.0",
+        "parcel": "^2.11.0",
+        "stylelint": "^16.2.1",
+        "stylelint-scss": "^6.1.0",
+        "twiglint": "^0.0.14",
+        "typescript": "^5.3.3"
+    }
+}

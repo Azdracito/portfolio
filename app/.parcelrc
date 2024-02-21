@@ -1,0 +1,6 @@
+{
+  "extends": ["@parcel/config-default"],
+  "transformers": {
+    "*.twig": ["@christian-beckmann/parcel-transformer-twig"]
+  }
+}

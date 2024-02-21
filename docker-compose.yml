@@ -1,0 +1,7 @@
+services:
+  portfolio:
+    build:
+      context: ./app
+      dockerfile: ../docker/Dockerfile
+    volumes:
+      - ./app:/srv/app:rw,cached

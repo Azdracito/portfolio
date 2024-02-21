@@ -1,0 +1,33 @@
+.social-icons {
+    .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 3.5rem;
+        width: 3.5rem;
+        background-color: $gray-700;
+        color: $white;
+        border-radius: 100%;
+        font-size: 1.5rem;
+        margin-right: 1.5rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: $primary;
+        }
+    }
+}
+
+.dev-icons {
+    font-size: 3rem;
+
+    .list-inline-item {
+        transition: color 0.2s ease-in-out;
+        &:hover {
+            color: $primary;
+        }
+    }
+}
