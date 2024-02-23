@@ -4,5 +4,5 @@ services:
     ports:
       - "80:80"
     volumes:
-      - "./app/dist:/usr/share/nginx/html"  # Assuming Hugo generates files in the 'public' directory
-      - "./nginx.conf:/etc/nginx/nginx.conf"  # Mount the custom nginx.conf file
+      - "./app/dist:/usr/share/nginx/html"
+      - "./nginx.conf:/etc/nginx/nginx.conf"
