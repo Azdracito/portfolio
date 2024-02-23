@@ -1,0 +1,27 @@
+.project-card {
+  .project-card-container {
+    position: relative;
+    background-color: #868e96;
+    width: 100%;
+    height: 144px;
+
+    .project-card-img {
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.5);
+    }
+
+    .project-card-info {
+      top: 50%;
+      right: 20px;
+      transform: translate(0, -50%);
+      position: absolute;
+      color: white;
+      font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
+}
