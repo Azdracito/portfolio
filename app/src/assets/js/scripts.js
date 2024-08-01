@@ -2,6 +2,7 @@ import '@fortawesome/fontawesome-free/js/all.min.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import {ScrollSpy} from 'bootstrap';
 import './tooltip';
+import './overflow-handling'
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
