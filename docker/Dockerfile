@@ -1,14 +1,5 @@
-ARG NODE_VERSION=20.10
-FROM node:${NODE_VERSION}-alpine AS node_api
-
-RUN set -eux; \
-	apk add --no-cache --virtual .build-deps \
-		g++ \
-		gcc \
-		git \
-		make \
-        python3 \
-	;
+ARG NODE_VERSION=23.1
+FROM node:${NODE_VERSION} AS node_api
 
 # Set working directory
 WORKDIR /srv/app

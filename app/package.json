@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "source": "src/index.html.twig",
     "browserslist": "> 0.5%, last 2 versions, not dead",
+    "type": "module",
     "scripts": {
         "watch": "parcel",
         "build": "parcel build",
