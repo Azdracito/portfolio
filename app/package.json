@@ -29,7 +29,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/AzdrHA/portfolio"
+        "url": "https://github.com/azdracito/portfolio"
     },
     "dependencies": {
         "@christian-beckmann/parcel-transformer-twig": "^0.1.1",
