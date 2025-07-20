@@ -1,5 +1,0 @@
-services:
-  portfolio:
-    ports:
-      - "1234:1234"
-    command: ["npm", "run", "watch"]

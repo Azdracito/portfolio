@@ -2,6 +2,9 @@ services:
   portfolio:
     build:
       context: ./app
-      dockerfile: ../docker/Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - ./app:/srv/app:rw,cached
+    ports:
+      - "1234:1234"
+    command: [ "npm", "run", "watch" ]

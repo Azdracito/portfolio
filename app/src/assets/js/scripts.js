@@ -1,6 +1,6 @@
 import '@fortawesome/fontawesome-free/js/all.min.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import {ScrollSpy} from 'bootstrap';
+import {ScrollSpy, Collapse} from 'bootstrap';
 import './tooltip';
 import './overflow-handling'
 
@@ -14,15 +14,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 
-  const navbarToggler = document.body.querySelector('.navbar-toggler');
-  const responsiveNavItems = [].slice.call(
-      document.querySelectorAll('#navbarResponsive .nav-link'),
-  );
-  responsiveNavItems.map(function(responsiveNavItem) {
-    responsiveNavItem.addEventListener('click', () => {
-      if (window.getComputedStyle(navbarToggler).display !== 'none') {
-        navbarToggler.click();
-      }
-    });
+  const toggler = document.querySelector('.navbar-toggler');
+  const collapseEl = document.getElementById('navbarResponsive');
+  toggler.addEventListener('click', function () {
+    let bsCollapse = Collapse.getInstance(collapseEl);
+    if (!bsCollapse) {
+      bsCollapse = new Collapse(collapseEl, { toggle: false });
+    }
+    if (collapseEl.classList.contains('show')) {
+      bsCollapse.hide();
+    } else {
+      bsCollapse.show();
+    }
   });
 });
