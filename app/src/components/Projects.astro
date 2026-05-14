@@ -1,5 +1,14 @@
 ---
+import { Image } from 'astro:assets';
 import { projects } from '../data/projects';
+
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
+    '../assets/img/projects/*.webp',
+    { eager: true }
+);
+const imageMap = Object.fromEntries(
+    Object.entries(imageModules).map(([path, mod]) => [path.split('/').pop()!, mod.default])
+);
 
 const externalLinkIcon = `<svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true">
     <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/>
@@ -21,10 +30,11 @@ const externalLinkIcon = `<svg viewBox="0 0 24 24" fill="currentColor" width="1e
                         aria-label={p.title}
                     >
                         <div class="card-img-wrap">
-                            <img
-                                src={`/assets/img/projects/${p.img}`}
+                            <Image
+                                src={imageMap[p.img]}
                                 alt={p.title}
-                                loading="lazy"
+                                width={400}
+                                height={220}
                             />
                             <span class="card-title">{p.title}</span>
                         </div>
