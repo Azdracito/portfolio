@@ -1,0 +1,25 @@
+---
+import { educations } from '../data/education';
+import { sectionsHtml } from '../utils/sections';
+---
+
+<section class="resume-section" id="formations">
+    <div class="resume-section-content fade-in">
+        <h2 class="section-heading">Formations</h2>
+
+        <div class="resume-timeline">
+            {
+                educations.map((edu) => (
+                    <div class="timeline-entry">
+                        <h3>{edu.title}</h3>
+                        {edu.subtitle && (
+                            <p class="subheading">{edu.subtitle}</p>
+                        )}
+                        <p class="location">{edu.location}</p>
+                        <div set:html={sectionsHtml(edu.sections)} />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

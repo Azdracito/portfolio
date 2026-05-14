@@ -1,6 +1,5 @@
-node_modules
+# macOS-specific files
 .DS_Store
-.parcel-cache
-dist
-.idea
-package-lock.json
+
+# jetbrains setting folder
+.idea/

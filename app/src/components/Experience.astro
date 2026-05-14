@@ -1,0 +1,31 @@
+---
+import { experiences } from '../data/experience';
+import { sectionsHtml } from '../utils/sections';
+---
+
+<section class="resume-section" id="experience">
+    <div class="resume-section-content fade-in">
+        <h2 class="section-heading">Expériences</h2>
+
+        <div class="resume-timeline">
+            {
+                experiences.map((exp) => (
+                    <div class="timeline-entry">
+                        <h3>{exp.title}</h3>
+                        <p class="location">{exp.location}</p>
+
+                        <div
+                            set:html={sectionsHtml(exp.sections, exp.mission)}
+                        />
+
+                        {exp.stack && (
+                            <p class="stack">
+                                <strong>Stack :</strong> {exp.stack}
+                            </p>
+                        )}
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
