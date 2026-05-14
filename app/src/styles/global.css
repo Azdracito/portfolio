@@ -269,30 +269,3 @@ h3 {
     }
 }
 
-/* ===== Dark mode component overrides ===== */
-/* Social icon (About): wins over scoped .social-icon[data-astro-cid] via type selector */
-html.dark .social-icon {
-    background: var(--icon-bg);
-}
-
-/* Skill tags: lighter text + slightly more opaque bg for readability on dark */
-html.dark .tag-frontend {
-    background: rgba(56, 139, 253, 0.15);
-    color: #79c0ff;
-    border-color: rgba(56, 139, 253, 0.3);
-}
-html.dark .tag-backend {
-    background: rgba(255, 140, 0, 0.12);
-    color: #ffa657;
-    border-color: rgba(255, 140, 0, 0.28);
-}
-html.dark .tag-devops {
-    background: rgba(63, 185, 80, 0.12);
-    color: #56d364;
-    border-color: rgba(63, 185, 80, 0.28);
-}
-html.dark .tag-other {
-    background: rgba(188, 140, 255, 0.12);
-    color: #d2a8ff;
-    border-color: rgba(188, 140, 255, 0.28);
-}

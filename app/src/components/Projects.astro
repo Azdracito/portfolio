@@ -22,7 +22,7 @@ const imageMap = Object.fromEntries(
                         class="project-card"
                         href={p.url}
                         target="_blank"
-                        rel="noopener"
+                        rel="noopener noreferrer"
                         aria-label={`Voir le projet ${p.title}`}
                     >
                         <Image
@@ -121,7 +121,7 @@ const imageMap = Object.fromEntries(
     }
 
     .card-title {
-        color: #fff;
+        color: var(--white);
         font-family: var(--font-heading);
         font-weight: 700;
         font-size: 1.1rem;
