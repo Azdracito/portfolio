@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import {ScrollSpy, Collapse} from 'bootstrap';
 import './tooltip';
 import './overflow-handling'
+import './animations'
 
 
 window.addEventListener('DOMContentLoaded', (event) => {

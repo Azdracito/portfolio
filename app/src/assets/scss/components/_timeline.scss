@@ -1,0 +1,33 @@
+.resume-timeline {
+    position: relative;
+    padding-left: 2rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 10px;
+        bottom: 10px;
+        width: 2px;
+        background: linear-gradient(180deg, $primary 0%, rgba($primary, 0.08) 100%);
+        border-radius: 2px;
+    }
+}
+
+.timeline-entry {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: -2rem;
+        top: 10px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2.5px solid $primary;
+        box-shadow: 0 0 0 3px rgba($primary, 0.15);
+        z-index: 1;
+    }
+}

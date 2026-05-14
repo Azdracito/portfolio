@@ -1,0 +1,36 @@
+---
+const projects = [
+    { title: 'Portfolio',        img: 'p9QgnxGVaK6DIR6N.webp', url: 'https://github.com/azdracito/portfolio' },
+    { title: 'Animalert',        img: '5QQsshbVLD7PPg26.webp', url: 'https://gitlab.com/azdra/animalert' },
+    { title: 'Transporter',      img: 'ScOxBNkQXegY96xr.webp', url: 'https://gitlab.com/kevingrand1/transporters' },
+    { title: 'Green Lawyer',     img: 'tkvPjIZwtHGABnRL.webp', url: 'https://gitlab.com/deb-phoenix/green-lawyer' },
+    { title: 'Friendisc',        img: 'TFkjA3QTrYSbDajg.webp', url: 'https://gitlab.com/azdra/friendisc' },
+    { title: 'Phantom-X',        img: 'ZrzCDvfwNSPbTvtQ.webp', url: 'https://gitlab.com/azdra/phantom-x-site' },
+    { title: 'Pokegotchi',       img: 'GcBaqU4i46Hyq6wq.webp', url: 'https://gitlab.com/azdra/tamagotchi' },
+    { title: 'Alluciné',         img: 'LEOxKrfshIvcWwpE.webp', url: 'https://gitlab.com/azdra/allocin-clone' },
+    { title: 'MyMetromobilité',  img: 'T6jg5BmVIvaJ8ltU.webp', url: 'https://gitlab.com/azdra/mymetromobilit' },
+];
+
+/* External link SVG — inline so no icon library needed */
+const externalLinkIcon = `<svg viewBox="0 0 24 24" fill="currentColor" width="0.65em" height="0.65em" aria-hidden="true">
+    <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/>
+</svg>`;
+---
+
+<section class="resume-section" id="projects">
+    <div class="resume-section-content fade-in">
+        <h2 class="section-heading">Projets</h2>
+
+        <div class="projects-grid">
+            {projects.map(p => (
+                <a class="project-card" href={p.url} target="_blank" rel="noopener" aria-label={p.title}>
+                    <div class="card-img-wrap">
+                        <img src={`/assets/img/projects/${p.img}`} alt={p.title} loading="lazy" />
+                        <span class="card-title">{p.title}</span>
+                    </div>
+                    <span class="card-badge" set:html={externalLinkIcon} />
+                </a>
+            ))}
+        </div>
+    </div>
+</section>

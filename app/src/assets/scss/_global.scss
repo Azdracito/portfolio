@@ -1,7 +1,7 @@
 body {
     padding-top: $navbar-base-height;
-    color: $gray-600;
-
+    color: $gray-700;
+    line-height: 1.75;
 }
 
 @include media-breakpoint-up(lg) {
@@ -24,6 +24,22 @@ h1 {
     line-height: 1;
 }
 
+h2.section-heading {
+    position: relative;
+    padding-bottom: 0.75rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 3rem;
+        height: 3px;
+        background: $primary;
+        border-radius: 2px;
+    }
+}
+
 .lead {
     font-size: 1rem;
     font-weight: 400;
@@ -36,7 +52,9 @@ h1 {
 }
 
 .location {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $primary;
 }
 
 .subheading {
