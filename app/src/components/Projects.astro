@@ -144,20 +144,20 @@ const imageMap = Object.fromEntries(
         font-weight: 700;
         letter-spacing: 0.06rem;
         text-transform: uppercase;
-        opacity: 0;
-        transform: translateY(0.5rem);
+        opacity: 1;
+        transform: translateY(0);
         transition:
             opacity 0.35s ease,
             transform 0.35s ease;
     }
-    .project-card:hover .card-cta {
-        opacity: 1;
-        transform: translateY(0);
-    }
 
-    /* Touch devices: no hover, show CTA permanently */
-    @media (hover: none) {
+    /* Only animate CTA on real mouse-driven devices */
+    @media (hover: hover) and (pointer: fine) {
         .card-cta {
+            opacity: 0;
+            transform: translateY(0.5rem);
+        }
+        .project-card:hover .card-cta {
             opacity: 1;
             transform: translateY(0);
         }
