@@ -1,131 +1,71 @@
+---
+type TagVariant = 'frontend' | 'backend' | 'devops' | 'method';
+
+interface SkillCategory {
+    label: string;
+    tags: string[];
+    variant: TagVariant;
+}
+
+interface SkillGroup {
+    heading: string;
+    categories: SkillCategory[];
+}
+
+const skills: SkillGroup[] = [
+    {
+        heading: "Frontend",
+        categories: [
+            { label: "Frameworks", variant: "frontend", tags: ["Vue.js", "React", "Angular", "Nuxt.js", "Next.js"] },
+            { label: "UI / UX",    variant: "frontend", tags: ["Tailwind CSS", "Bootstrap", "Material-UI", "Responsive Design", "PWA"] },
+            { label: "Outils",     variant: "frontend", tags: ["Vite", "Webpack", "TypeScript", "Jest", "Cypress"] },
+        ],
+    },
+    {
+        heading: "Backend",
+        categories: [
+            { label: "Langages",   variant: "backend", tags: ["PHP", "Node.js", "Python", "Java"] },
+            { label: "Frameworks", variant: "backend", tags: ["Symfony", "Laravel", "NestJS", "Express.js"] },
+            { label: "API",        variant: "backend", tags: ["REST", "GraphQL", "WebSocket", "WebRTC"] },
+            { label: "Databases",  variant: "backend", tags: ["MySQL", "PostgreSQL", "MongoDB", "Redis", "Elasticsearch"] },
+        ],
+    },
+    {
+        heading: "DevOps",
+        categories: [
+            { label: "Conteneurs", variant: "devops", tags: ["Docker", "Kubernetes"] },
+            { label: "CI / CD",    variant: "devops", tags: ["GitLab CI", "GitHub Actions", "Jenkins"] },
+            { label: "Monitoring", variant: "devops", tags: ["Sentry", "SonarQube", "New Relic"] },
+        ],
+    },
+    {
+        heading: "Méthodologies",
+        categories: [
+            { label: "Pratiques",  variant: "method", tags: ["Agile / Scrum", "TDD", "Clean Architecture", "DDD"] },
+        ],
+    },
+];
+---
+
 <section class="resume-section" id="skills">
     <div class="resume-section-content fade-in">
         <h2 class="section-heading">Hard Skills</h2>
 
-        <div class="skills-group">
-            <div class="subheading" style="margin-bottom: 1rem">Frontend</div>
+        {skills.map((group) => (
+            <div class="skills-group">
+                <div class="subheading" style="margin-bottom: 1rem">{group.heading}</div>
 
-            <div class="skills-category">
-                <span class="skills-label">Frameworks</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-frontend">Vue.js</span>
-                    <span class="skill-tag tag-frontend">React</span>
-                    <span class="skill-tag tag-frontend">Angular</span>
-                    <span class="skill-tag tag-frontend">Nuxt.js</span>
-                    <span class="skill-tag tag-frontend">Next.js</span>
-                </div>
+                {group.categories.map((cat) => (
+                    <div class="skills-category">
+                        <span class="skills-label">{cat.label}</span>
+                        <div class="skills-tags">
+                            {cat.tags.map((tag) => (
+                                <span class={`skill-tag tag-${cat.variant}`}>{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                ))}
             </div>
-
-            <div class="skills-category">
-                <span class="skills-label">UI / UX</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-frontend">Tailwind CSS</span>
-                    <span class="skill-tag tag-frontend">Bootstrap</span>
-                    <span class="skill-tag tag-frontend">Material-UI</span>
-                    <span class="skill-tag tag-frontend">Responsive Design</span>
-                    <span class="skill-tag tag-frontend">PWA</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <span class="skills-label">Outils</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-frontend">Vite</span>
-                    <span class="skill-tag tag-frontend">Webpack</span>
-                    <span class="skill-tag tag-frontend">TypeScript</span>
-                    <span class="skill-tag tag-frontend">Jest</span>
-                    <span class="skill-tag tag-frontend">Cypress</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="skills-group">
-            <div class="subheading" style="margin-bottom: 1rem">Backend</div>
-
-            <div class="skills-category">
-                <span class="skills-label">Langages</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-backend">PHP</span>
-                    <span class="skill-tag tag-backend">Node.js</span>
-                    <span class="skill-tag tag-backend">Python</span>
-                    <span class="skill-tag tag-backend">Java</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <span class="skills-label">Frameworks</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-backend">Symfony</span>
-                    <span class="skill-tag tag-backend">Laravel</span>
-                    <span class="skill-tag tag-backend">NestJS</span>
-                    <span class="skill-tag tag-backend">Express.js</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <span class="skills-label">API</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-backend">REST</span>
-                    <span class="skill-tag tag-backend">GraphQL</span>
-                    <span class="skill-tag tag-backend">WebSocket</span>
-                    <span class="skill-tag tag-backend">WebRTC</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <span class="skills-label">Databases</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-backend">MySQL</span>
-                    <span class="skill-tag tag-backend">PostgreSQL</span>
-                    <span class="skill-tag tag-backend">MongoDB</span>
-                    <span class="skill-tag tag-backend">Redis</span>
-                    <span class="skill-tag tag-backend">Elasticsearch</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="skills-group">
-            <div class="subheading" style="margin-bottom: 1rem">DevOps</div>
-
-            <div class="skills-category">
-                <span class="skills-label">Conteneurs</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-devops">Docker</span>
-                    <span class="skill-tag tag-devops">Kubernetes</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <span class="skills-label">CI / CD</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-devops">GitLab CI</span>
-                    <span class="skill-tag tag-devops">GitHub Actions</span>
-                    <span class="skill-tag tag-devops">Jenkins</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <span class="skills-label">Monitoring</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-devops">Sentry</span>
-                    <span class="skill-tag tag-devops">SonarQube</span>
-                    <span class="skill-tag tag-devops">New Relic</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="skills-group">
-            <div class="subheading" style="margin-bottom: 1rem">Méthodologies</div>
-
-            <div class="skills-category">
-                <span class="skills-label">Pratiques</span>
-                <div class="skills-tags">
-                    <span class="skill-tag tag-method">Agile / Scrum</span>
-                    <span class="skill-tag tag-method">TDD</span>
-                    <span class="skill-tag tag-method">Clean Architecture</span>
-                    <span class="skill-tag tag-method">DDD</span>
-                </div>
-            </div>
-        </div>
+        ))}
     </div>
 </section>
