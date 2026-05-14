@@ -1,8 +1,7 @@
-ARG NODE_VERSION=lts-alpine
-FROM node:${NODE_VERSION}
-
+FROM node:lts-alpine
 WORKDIR /srv/app
-RUN npm -g install npm@latest
-COPY package*.json ./
+COPY package.json ./
 RUN npm install
-USER node
+COPY . .
+EXPOSE 4321
+CMD ["npm", "run", "dev"]
