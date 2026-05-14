@@ -1,15 +1,3 @@
-const sidebar = document.getElementById('sideNav');
-
-// Mobile nav toggle
-document.querySelector('.nav-toggle')?.addEventListener('click', () => {
-    sidebar?.classList.toggle('open');
-});
-
-// Close mobile nav on link click
-document.querySelectorAll('.nav-links a').forEach((link) => {
-    link.addEventListener('click', () => sidebar?.classList.remove('open'));
-});
-
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (e) => {
