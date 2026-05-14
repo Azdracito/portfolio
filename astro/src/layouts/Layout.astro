@@ -67,16 +67,6 @@ const {
         window.addEventListener('scroll', updateScrollSpy, { passive: true });
         updateScrollSpy();
 
-        // Voir plus / voir moins
-        document.querySelectorAll<HTMLButtonElement>('[data-voir-plus]').forEach(btn => {
-            const target = document.querySelector(btn.dataset.voirPlus ?? '');
-            if (!target) return;
-            btn.addEventListener('click', () => {
-                const expanded = target.classList.toggle('expanded');
-                btn.textContent = expanded ? 'voir moins' : '...voir plus';
-            });
-        });
-
         // Scroll-in animations
         const observer = new IntersectionObserver(entries => {
             entries.forEach(({ target, isIntersecting }) => {

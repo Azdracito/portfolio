@@ -230,30 +230,6 @@ h3 { font-size: 1.75rem; }
 .stack { margin-top: 0.75rem; font-size: 0.9rem; color: var(--primary); }
 .stack strong { font-weight: 700; }
 
-/* ===== Overflow (voir plus) ===== */
-.overflow-wrap { position: relative; }
-.overflow-desc {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-}
-.overflow-wrap.expanded .overflow-desc { display: block; }
-
-.btn-voir-plus {
-    margin-top: 0.5rem;
-    padding: 0.3rem 0.9rem;
-    background: var(--primary);
-    color: var(--white);
-    border: none;
-    border-radius: var(--radius);
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    cursor: pointer;
-    transition: background var(--ease);
-    white-space: nowrap;
-}
-.btn-voir-plus:hover { background: var(--primary-dark); }
 
 /* ===== Project Cards ===== */
 .projects-grid {
