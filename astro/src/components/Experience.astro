@@ -16,79 +16,84 @@ function sectionsHtml(sections: Section[], mission?: string): string {
     const missionPart = mission
         ? `<p style="margin-top:.75rem">${mission}</p>`
         : '';
-    const sectionsPart = sections.map(sec => {
-        const heading = sec.heading ? `<p><strong>${sec.heading}</strong></p>` : '';
-        const items = sec.items.map(i => `<li>${i}</li>`).join('');
-        return `<div style="margin-top:.75rem">${heading}<ul>${items}</ul></div>`;
-    }).join('');
+    const sectionsPart = sections
+        .map((sec) => {
+            const heading = sec.heading
+                ? `<p><strong>${sec.heading}</strong></p>`
+                : '';
+            const items = sec.items.map((i) => `<li>${i}</li>`).join('');
+            return `<div style="margin-top:.75rem">${heading}<ul>${items}</ul></div>`;
+        })
+        .join('');
     return missionPart + sectionsPart;
 }
 
 const experiences: Experience[] = [
     {
-        title: "Ingénieur Études & Développement Logiciel · Thales",
+        title: 'Ingénieur Études & Développement Logiciel · Thales',
         location: "10/2025 – aujourd'hui · Montbonnot-Saint-Martin (38) · CDI",
-        mission: "Contribution au développement et à la maintenance de composants logiciels embarqués dans des environnements industriels exigeants.",
+        mission:
+            'Contribution au développement et à la maintenance de composants logiciels embarqués dans des environnements industriels exigeants.',
         sections: [
             {
-                heading: "Spécification & conception :",
+                heading: 'Spécification & conception :',
                 items: [
-                    "Backlog refinement et rédaction des spécifications fonctionnelles et techniques.",
-                    "Design de composants logiciels en lien avec les architectures définies.",
+                    'Backlog refinement et rédaction des spécifications fonctionnelles et techniques.',
+                    'Design de composants logiciels en lien avec les architectures définies.',
                 ],
             },
             {
-                heading: "Développement & intégration :",
+                heading: 'Développement & intégration :',
                 items: [
-                    "Implémentation à partir des éléments de design établis.",
-                    "Scripting de déploiement et gestion des environnements.",
+                    'Implémentation à partir des éléments de design établis.',
+                    'Scripting de déploiement et gestion des environnements.',
                 ],
             },
             {
-                heading: "Qualité & test :",
+                heading: 'Qualité & test :',
                 items: [
                     "Mise en œuvre de tests unitaires, d'intégration, de vérification et de validation.",
-                    "Participation aux campagnes de qualification.",
+                    'Participation aux campagnes de qualification.',
                 ],
             },
             {
-                heading: "Opérations & support :",
+                heading: 'Opérations & support :',
                 items: [
-                    "Maintenance corrective et évolutive des solutions en production.",
+                    'Maintenance corrective et évolutive des solutions en production.',
                     "Traitement des requêtes utilisateurs et investigation d'incidents.",
                 ],
             },
             {
-                heading: "Transverse :",
+                heading: 'Transverse :',
                 items: [
-                    "Interface technique avec les équipes Produit et Projet.",
-                    "Contribution aux revues techniques et à la capitalisation des connaissances.",
+                    'Interface technique avec les équipes Produit et Projet.',
+                    'Contribution aux revues techniques et à la capitalisation des connaissances.',
                 ],
             },
         ],
-        stack: "Python, Angular, PHP, Docker, Git, SQL, #Agile",
+        stack: 'Python, Angular, PHP, Docker, Git, SQL, #Agile',
     },
     {
-        title: "Développeur Freelance",
+        title: 'Développeur Freelance',
         location: "10/2024 à aujourd'hui · Clients variés",
         sections: [
             {
                 items: [
                     "Réalisation marquante : conception d'un logiciel de facturation sur-mesure pour un établissement privé (économie de 15h/mois de traitement manuel).",
-                    "Gestion complète de projets, du cahier des charges à la livraison, avec une approche Agile et adaptative.",
-                    "Livraison des projets complets en respectant délais et budgets.",
-                    "Collaboration avec UX designer : amélioration parcours utilisateurs.",
+                    'Gestion complète de projets, du cahier des charges à la livraison, avec une approche Agile et adaptative.',
+                    'Livraison des projets complets en respectant délais et budgets.',
+                    'Collaboration avec UX designer : amélioration parcours utilisateurs.',
                 ],
             },
         ],
-        stack: "Python, Java, Angular, React, Next.js, NestJS, Docker #Agile",
+        stack: 'Python, Java, Angular, React, Next.js, NestJS, Docker #Agile',
     },
     {
-        title: "Développeur Full Stack · Live Session",
-        location: "01/2023 – 10/2024 · Crolles (38920) · SaaS",
+        title: 'Développeur Full Stack · Live Session',
+        location: '01/2023 – 10/2024 · Crolles (38920) · SaaS',
         sections: [
             {
-                heading: "Impact business majeur :",
+                heading: 'Impact business majeur :',
                 items: [
                     "Développement du module d'inscription à des évènements en ligne : +40% de conversion, intégration seamless avec 5 outils existants.",
                     "Création d'un service de communication IA facilitant les interactions en temps réel dans un environnement SaaS sécurisé : réduction du temps de réponse support.",
@@ -96,44 +101,46 @@ const experiences: Experience[] = [
                 ],
             },
             {
-                heading: "Excellence technique :",
+                heading: 'Excellence technique :',
                 items: [
                     "Refonte complète UX/UI en appliquant des pratiques d'accessibilité : amélioration du score de 65 à 95/100.",
-                    "Intégration API (mail/SMS) : système de notifications temps réel.",
-                    "Optimisation SEO du site corporate : +120% de trafic organique en 6 mois.",
+                    'Intégration API (mail/SMS) : système de notifications temps réel.',
+                    'Optimisation SEO du site corporate : +120% de trafic organique en 6 mois.',
                     "Contribution à l'amélioration des pratiques Agiles et DevOps, avec tests automatisés, déploiement continu et suivi des performances.",
                 ],
             },
         ],
-        stack: "PHP, Symfony, Vue.js, WebSocket, WebRTC, CMS, Docker, CI/CD, #DevOps, #Agile",
+        stack: 'PHP, Symfony, Vue.js, WebSocket, WebRTC, CMS, Docker, CI/CD, #DevOps, #Agile',
     },
     {
-        title: "Développeur Back-end · Ascanio",
-        location: "04/2021 – 10/2022 · Montbonnot-Saint-Martin (38330) · E-commerce B2B",
+        title: 'Développeur Back-end · Ascanio',
+        location:
+            '04/2021 – 10/2022 · Montbonnot-Saint-Martin (38330) · E-commerce B2B',
         sections: [
             {
                 items: [
-                    "Migration Symfony 3.2 → 5.4 : 0 downtime, amélioration des performances du projet.",
+                    'Migration Symfony 3.2 → 5.4 : 0 downtime, amélioration des performances du projet.',
                     "Développement d'un module de réservation en ligne : gestion de 500+ réservations/jour.",
-                    "Immersion PHP/Symfony : best practices, optimisations et nouveautés.",
+                    'Immersion PHP/Symfony : best practices, optimisations et nouveautés.',
                 ],
             },
         ],
-        stack: "PHP, Symfony, Sylius, MySQL, MongoDB, Redis, Git",
+        stack: 'PHP, Symfony, Sylius, MySQL, MongoDB, Redis, Git',
     },
     {
-        title: "Développeur Back-end (Alternance) · Ascanio",
-        location: "04/2020 – 04/2021 · Montbonnot-Saint-Martin (38330) · E-commerce B2B",
+        title: 'Développeur Back-end (Alternance) · Ascanio',
+        location:
+            '04/2020 – 04/2021 · Montbonnot-Saint-Martin (38330) · E-commerce B2B',
         sections: [
             {
                 items: [
-                    "Contribution à 3 modules e-commerce en production.",
-                    "Code review et pair programming quotidien.",
-                    "Immersion dans les best practices PHP/Symfony.",
+                    'Contribution à 3 modules e-commerce en production.',
+                    'Code review et pair programming quotidien.',
+                    'Immersion dans les best practices PHP/Symfony.',
                 ],
             },
         ],
-        stack: "PHP, Symfony, Sylius, MySQL, SQL, E-commerce, Git",
+        stack: 'PHP, Symfony, Sylius, MySQL, SQL, E-commerce, Git',
     },
 ];
 ---
@@ -143,16 +150,24 @@ const experiences: Experience[] = [
         <h2 class="section-heading">Expériences</h2>
 
         <div class="resume-timeline">
-            {experiences.map(exp => (
-                <div class="timeline-entry">
-                    <h3>{exp.title}</h3>
-                    <p class="location">{exp.location}</p>
+            {
+                experiences.map((exp) => (
+                    <div class="timeline-entry">
+                        <h3>{exp.title}</h3>
+                        <p class="location">{exp.location}</p>
 
-                    <div set:html={sectionsHtml(exp.sections, exp.mission)} />
+                        <div
+                            set:html={sectionsHtml(exp.sections, exp.mission)}
+                        />
 
-                    {exp.stack && <p class="stack"><strong>Stack :</strong> {exp.stack}</p>}
-                </div>
-            ))}
+                        {exp.stack && (
+                            <p class="stack">
+                                <strong>Stack :</strong> {exp.stack}
+                            </p>
+                        )}
+                    </div>
+                ))
+            }
         </div>
     </div>
 </section>

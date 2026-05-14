@@ -6,10 +6,26 @@ interface Certification {
 }
 
 const certifications: Certification[] = [
-    { title: "Product Owner Certification Internationale – icPO", issuer: "Scrum League", year: 2025 },
-    { title: "Scrum Master Certification Internationale – icSM",  issuer: "Scrum League", year: 2025 },
-    { title: "Méthodes agiles de gestion et amorçage projet",     issuer: "Simplon",      year: 2021 },
-    { title: "Maîtrise de la qualité en projet Web",              issuer: "Opquast",      year: 2021 },
+    {
+        title: 'Product Owner Certification Internationale – icPO',
+        issuer: 'Scrum League',
+        year: 2025,
+    },
+    {
+        title: 'Scrum Master Certification Internationale – icSM',
+        issuer: 'Scrum League',
+        year: 2025,
+    },
+    {
+        title: 'Méthodes agiles de gestion et amorçage projet',
+        issuer: 'Simplon',
+        year: 2021,
+    },
+    {
+        title: 'Maîtrise de la qualité en projet Web',
+        issuer: 'Opquast',
+        year: 2021,
+    },
 ];
 ---
 
@@ -18,12 +34,16 @@ const certifications: Certification[] = [
         <h2 class="section-heading">Certifications</h2>
 
         <div class="resume-timeline">
-            {certifications.map((cert) => (
-                <div class="timeline-entry">
-                    <h3>{cert.title}</h3>
-                    <p class="location">{cert.issuer} · {cert.year}</p>
-                </div>
-            ))}
+            {
+                certifications.map((cert) => (
+                    <div class="timeline-entry">
+                        <h3>{cert.title}</h3>
+                        <p class="location">
+                            {cert.issuer} · {cert.year}
+                        </p>
+                    </div>
+                ))
+            }
         </div>
     </div>
 </section>

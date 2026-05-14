@@ -14,34 +14,90 @@ interface SkillGroup {
 
 const skills: SkillGroup[] = [
     {
-        heading: "Frontend",
+        heading: 'Frontend',
         categories: [
-            { label: "Frameworks", variant: "frontend", tags: ["Vue.js", "React", "Angular", "Nuxt.js", "Next.js"] },
-            { label: "UI / UX",    variant: "frontend", tags: ["Tailwind CSS", "Bootstrap", "Material-UI", "Responsive Design", "PWA"] },
-            { label: "Outils",     variant: "frontend", tags: ["Vite", "Webpack", "TypeScript", "Jest", "Cypress"] },
+            {
+                label: 'Frameworks',
+                variant: 'frontend',
+                tags: ['Vue.js', 'React', 'Angular', 'Nuxt.js', 'Next.js'],
+            },
+            {
+                label: 'UI / UX',
+                variant: 'frontend',
+                tags: [
+                    'Tailwind CSS',
+                    'Bootstrap',
+                    'Material-UI',
+                    'Responsive Design',
+                    'PWA',
+                ],
+            },
+            {
+                label: 'Outils',
+                variant: 'frontend',
+                tags: ['Vite', 'Webpack', 'TypeScript', 'Jest', 'Cypress'],
+            },
         ],
     },
     {
-        heading: "Backend",
+        heading: 'Backend',
         categories: [
-            { label: "Langages",   variant: "backend", tags: ["PHP", "Node.js", "Python", "Java"] },
-            { label: "Frameworks", variant: "backend", tags: ["Symfony", "Laravel", "NestJS", "Express.js"] },
-            { label: "API",        variant: "backend", tags: ["REST", "GraphQL", "WebSocket", "WebRTC"] },
-            { label: "Databases",  variant: "backend", tags: ["MySQL", "PostgreSQL", "MongoDB", "Redis", "Elasticsearch"] },
+            {
+                label: 'Langages',
+                variant: 'backend',
+                tags: ['PHP', 'Node.js', 'Python', 'Java'],
+            },
+            {
+                label: 'Frameworks',
+                variant: 'backend',
+                tags: ['Symfony', 'Laravel', 'NestJS', 'Express.js'],
+            },
+            {
+                label: 'API',
+                variant: 'backend',
+                tags: ['REST', 'GraphQL', 'WebSocket', 'WebRTC'],
+            },
+            {
+                label: 'Databases',
+                variant: 'backend',
+                tags: [
+                    'MySQL',
+                    'PostgreSQL',
+                    'MongoDB',
+                    'Redis',
+                    'Elasticsearch',
+                ],
+            },
         ],
     },
     {
-        heading: "DevOps",
+        heading: 'DevOps',
         categories: [
-            { label: "Conteneurs", variant: "devops", tags: ["Docker", "Kubernetes"] },
-            { label: "CI / CD",    variant: "devops", tags: ["GitLab CI", "GitHub Actions", "Jenkins"] },
-            { label: "Monitoring", variant: "devops", tags: ["Sentry", "SonarQube", "New Relic"] },
+            {
+                label: 'Conteneurs',
+                variant: 'devops',
+                tags: ['Docker', 'Kubernetes'],
+            },
+            {
+                label: 'CI / CD',
+                variant: 'devops',
+                tags: ['GitLab CI', 'GitHub Actions', 'Jenkins'],
+            },
+            {
+                label: 'Monitoring',
+                variant: 'devops',
+                tags: ['Sentry', 'SonarQube', 'New Relic'],
+            },
         ],
     },
     {
-        heading: "Méthodologies",
+        heading: 'Méthodologies',
         categories: [
-            { label: "Pratiques",  variant: "method", tags: ["Agile / Scrum", "TDD", "Clean Architecture", "DDD"] },
+            {
+                label: 'Pratiques',
+                variant: 'method',
+                tags: ['Agile / Scrum', 'TDD', 'Clean Architecture', 'DDD'],
+            },
         ],
     },
 ];
@@ -51,21 +107,29 @@ const skills: SkillGroup[] = [
     <div class="resume-section-content fade-in">
         <h2 class="section-heading">Hard Skills</h2>
 
-        {skills.map((group) => (
-            <div class="skills-group">
-                <div class="subheading" style="margin-bottom: 1rem">{group.heading}</div>
-
-                {group.categories.map((cat) => (
-                    <div class="skills-category">
-                        <span class="skills-label">{cat.label}</span>
-                        <div class="skills-tags">
-                            {cat.tags.map((tag) => (
-                                <span class={`skill-tag tag-${cat.variant}`}>{tag}</span>
-                            ))}
-                        </div>
+        {
+            skills.map((group) => (
+                <div class="skills-group">
+                    <div class="subheading" style="margin-bottom: 1rem">
+                        {group.heading}
                     </div>
-                ))}
-            </div>
-        ))}
+
+                    {group.categories.map((cat) => (
+                        <div class="skills-category">
+                            <span class="skills-label">{cat.label}</span>
+                            <div class="skills-tags">
+                                {cat.tags.map((tag) => (
+                                    <span
+                                        class={`skill-tag tag-${cat.variant}`}
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ))
+        }
     </div>
 </section>
