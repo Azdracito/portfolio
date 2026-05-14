@@ -34,6 +34,32 @@ body {
     line-height: 1.75;
     padding-left: var(--sidebar-width);
     background: var(--white);
+    transition: padding-left 0.3s ease;
+}
+body.nav-collapsed {
+    padding-left: 0;
+}
+
+/* ===== Nav collapse (desktop) ===== */
+#sideNav {
+    transition: transform 0.3s ease;
+}
+body.nav-collapsed #sideNav {
+    transform: translateX(-100%);
+}
+.nav-reopen-btn {
+    display: none;
+}
+body.nav-collapsed .nav-reopen-btn {
+    display: flex;
+}
+@media (max-width: 991px) {
+    body.nav-collapsed #sideNav {
+        transform: none;
+    }
+    body.nav-collapsed .nav-reopen-btn {
+        display: none;
+    }
 }
 
 a {

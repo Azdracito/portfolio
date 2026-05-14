@@ -24,7 +24,21 @@
         <li><a href="#projects">Projets</a></li>
         <li><a href="#skills">Compétences</a></li>
     </ul>
+
+    <!-- Desktop only: collapse button -->
+    <button class="nav-collapse-btn" aria-label="Réduire la navigation">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true">
+            <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        </svg>
+    </button>
 </nav>
+
+<!-- Desktop only: floating tab to reopen the nav -->
+<button class="nav-reopen-btn" aria-label="Ouvrir la navigation">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true">
+        <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+    </svg>
+</button>
 
 <style>
     #sideNav {
@@ -118,6 +132,54 @@
         height: 1.1rem;
     }
 
+    /* Desktop collapse button */
+    .nav-collapse-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 1.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: var(--radius);
+        color: rgba(255, 255, 255, 0.7);
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        transition:
+            background var(--ease),
+            color var(--ease);
+    }
+    .nav-collapse-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: var(--white);
+    }
+
+    /* Floating reopen tab */
+    .nav-reopen-btn {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 101;
+        background: var(--primary);
+        border: none;
+        border-radius: 0 var(--radius) var(--radius) 0;
+        color: var(--white);
+        width: 1.5rem;
+        height: 3rem;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+        transition: background var(--ease);
+    }
+    .nav-reopen-btn:hover {
+        background: var(--primary-dark);
+    }
+
     @media (max-width: 991px) {
         #sideNav {
             width: 100%;
@@ -147,5 +209,27 @@
         #sideNav:global(.open) .nav-links {
             display: block;
         }
+
+        .nav-collapse-btn {
+            display: none;
+        }
     }
 </style>
+
+<script>
+    const collapseBtn = document.querySelector('.nav-collapse-btn')!;
+    const reopenBtn = document.querySelector('.nav-reopen-btn')!;
+
+    function setCollapsed(collapsed: boolean) {
+        document.body.classList.toggle('nav-collapsed', collapsed);
+        localStorage.setItem('navCollapsed', String(collapsed));
+    }
+
+    // Restore saved state
+    if (localStorage.getItem('navCollapsed') === 'true') {
+        document.body.classList.add('nav-collapsed');
+    }
+
+    collapseBtn.addEventListener('click', () => setCollapsed(true));
+    reopenBtn.addEventListener('click', () => setCollapsed(false));
+</script>
