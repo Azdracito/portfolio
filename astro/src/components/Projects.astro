@@ -1,53 +1,6 @@
 ---
-const projects = [
-    {
-        title: 'Portfolio',
-        img: 'p9QgnxGVaK6DIR6N.webp',
-        url: 'https://github.com/azdracito/portfolio',
-    },
-    {
-        title: 'Animalert',
-        img: '5QQsshbVLD7PPg26.webp',
-        url: 'https://gitlab.com/azdra/animalert',
-    },
-    {
-        title: 'Transporter',
-        img: 'ScOxBNkQXegY96xr.webp',
-        url: 'https://gitlab.com/kevingrand1/transporters',
-    },
-    {
-        title: 'Green Lawyer',
-        img: 'tkvPjIZwtHGABnRL.webp',
-        url: 'https://gitlab.com/deb-phoenix/green-lawyer',
-    },
-    {
-        title: 'Friendisc',
-        img: 'TFkjA3QTrYSbDajg.webp',
-        url: 'https://gitlab.com/azdra/friendisc',
-    },
-    {
-        title: 'Phantom-X',
-        img: 'ZrzCDvfwNSPbTvtQ.webp',
-        url: 'https://gitlab.com/azdra/phantom-x-site',
-    },
-    {
-        title: 'Pokegotchi',
-        img: 'GcBaqU4i46Hyq6wq.webp',
-        url: 'https://gitlab.com/azdra/tamagotchi',
-    },
-    {
-        title: 'Alluciné',
-        img: 'LEOxKrfshIvcWwpE.webp',
-        url: 'https://gitlab.com/azdra/allocin-clone',
-    },
-    {
-        title: 'MyMetromobilité',
-        img: 'T6jg5BmVIvaJ8ltU.webp',
-        url: 'https://gitlab.com/azdra/mymetromobilit',
-    },
-];
+import { projects } from '../data/projects';
 
-/* External link SVG — inline so no icon library needed */
 const externalLinkIcon = `<svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true">
     <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/>
 </svg>`;
@@ -82,3 +35,82 @@ const externalLinkIcon = `<svg viewBox="0 0 24 24" fill="currentColor" width="1e
         </div>
     </div>
 </section>
+
+<style>
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 1.25rem;
+    }
+    .project-card {
+        position: relative;
+        border-radius: var(--radius);
+        text-decoration: none;
+        display: block;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    }
+    .card-img-wrap {
+        position: relative;
+        height: 220px;
+        background: #2d3436;
+        overflow: hidden;
+        border-radius: var(--radius);
+    }
+    .card-img-wrap::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 45%;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+        z-index: 1;
+    }
+    .card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(1);
+        transition:
+            transform 0.5s ease,
+            filter 0.5s ease;
+    }
+    .project-card:hover .card-img-wrap img {
+        transform: scale(1.06);
+        filter: brightness(0.7);
+    }
+    .card-title {
+        position: absolute;
+        bottom: 0.85rem;
+        left: 1rem;
+        right: 1rem;
+        z-index: 2;
+        color: var(--white);
+        font-weight: 700;
+        font-size: 0.95rem;
+    }
+    .card-badge {
+        position: absolute;
+        top: -0.6rem;
+        right: -0.6rem;
+        z-index: 3;
+        width: 2rem;
+        height: 2rem;
+        background: var(--primary);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+        border: 2px solid var(--white);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>

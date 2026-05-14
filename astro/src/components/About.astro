@@ -3,7 +3,7 @@
         <h1 class="fade-in">
             Baptiste <span style="color: var(--primary)">BRAND</span>
         </h1>
-        <p class="subheading fade-in fade-in-d1" style="margin: 0.5rem 0 2rem">
+        <p class="subheading contact fade-in fade-in-d1">
             Grenoble · France ·
             <a href="mailto:contact@baptiste-brand.fr"
                 >contact@baptiste-brand.fr</a
@@ -52,7 +52,6 @@
                 rel="noopener"
                 aria-label="LinkedIn"
             >
-                <!-- LinkedIn -->
                 <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
@@ -72,7 +71,6 @@
                 rel="noopener"
                 aria-label="GitHub"
             >
-                <!-- GitHub -->
                 <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
@@ -92,7 +90,6 @@
                 rel="noopener"
                 aria-label="GitLab"
             >
-                <!-- GitLab -->
                 <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
@@ -108,3 +105,49 @@
         </div>
     </div>
 </section>
+
+<style>
+    .contact {
+        margin: 0.5rem 0 2rem;
+    }
+
+    .intro {
+        max-width: 50rem;
+    }
+    .intro p {
+        margin-bottom: 0.75rem;
+    }
+    .intro ul {
+        margin-bottom: 0.75rem;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+    .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        background: var(--text-dark);
+        color: var(--white);
+        border-radius: 50%;
+        font-size: 1.4rem;
+        text-decoration: none;
+        transition:
+            background var(--ease),
+            transform var(--ease);
+    }
+    .social-icon svg {
+        display: block;
+    }
+    .social-icon:hover {
+        background: var(--primary);
+        color: var(--white);
+        transform: translateY(-3px);
+    }
+</style>

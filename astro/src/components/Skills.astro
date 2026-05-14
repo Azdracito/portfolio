@@ -1,106 +1,5 @@
 ---
-type TagVariant = 'frontend' | 'backend' | 'devops' | 'method';
-
-interface SkillCategory {
-    label: string;
-    tags: string[];
-    variant: TagVariant;
-}
-
-interface SkillGroup {
-    heading: string;
-    categories: SkillCategory[];
-}
-
-const skills: SkillGroup[] = [
-    {
-        heading: 'Frontend',
-        categories: [
-            {
-                label: 'Frameworks',
-                variant: 'frontend',
-                tags: ['Vue.js', 'React', 'Angular', 'Nuxt.js', 'Next.js'],
-            },
-            {
-                label: 'UI / UX',
-                variant: 'frontend',
-                tags: [
-                    'Tailwind CSS',
-                    'Bootstrap',
-                    'Material-UI',
-                    'Responsive Design',
-                    'PWA',
-                ],
-            },
-            {
-                label: 'Outils',
-                variant: 'frontend',
-                tags: ['Vite', 'Webpack', 'TypeScript', 'Jest', 'Cypress'],
-            },
-        ],
-    },
-    {
-        heading: 'Backend',
-        categories: [
-            {
-                label: 'Langages',
-                variant: 'backend',
-                tags: ['PHP', 'Node.js', 'Python', 'Java'],
-            },
-            {
-                label: 'Frameworks',
-                variant: 'backend',
-                tags: ['Symfony', 'Laravel', 'NestJS', 'Express.js'],
-            },
-            {
-                label: 'API',
-                variant: 'backend',
-                tags: ['REST', 'GraphQL', 'WebSocket', 'WebRTC'],
-            },
-            {
-                label: 'Databases',
-                variant: 'backend',
-                tags: [
-                    'MySQL',
-                    'PostgreSQL',
-                    'MongoDB',
-                    'Redis',
-                    'Elasticsearch',
-                ],
-            },
-        ],
-    },
-    {
-        heading: 'DevOps',
-        categories: [
-            {
-                label: 'Conteneurs',
-                variant: 'devops',
-                tags: ['Docker', 'Kubernetes'],
-            },
-            {
-                label: 'CI / CD',
-                variant: 'devops',
-                tags: ['GitLab CI', 'GitHub Actions', 'Jenkins'],
-            },
-            {
-                label: 'Monitoring',
-                variant: 'devops',
-                tags: ['Sentry', 'SonarQube', 'New Relic'],
-            },
-        ],
-    },
-    {
-        heading: 'Méthodologies',
-        categories: [
-            {
-                label: 'Pratiques',
-                variant: 'method',
-                tags: ['Agile / Scrum', 'TDD', 'Clean Architecture', 'DDD'],
-            },
-        ],
-    },
-];
+import { skills } from '../data/skills';
 ---
 
 <section class="resume-section" id="skills">
@@ -110,7 +9,7 @@ const skills: SkillGroup[] = [
         {
             skills.map((group) => (
                 <div class="skills-group">
-                    <div class="subheading" style="margin-bottom: 1rem">
+                    <div class="subheading skills-group-heading">
                         {group.heading}
                     </div>
 
@@ -133,3 +32,89 @@ const skills: SkillGroup[] = [
         }
     </div>
 </section>
+
+<style>
+    .skills-group {
+        margin-bottom: 2.5rem;
+    }
+    .skills-group-heading {
+        margin-bottom: 1rem;
+    }
+    .skills-category {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem 0.75rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.75rem;
+    }
+    .skills-label {
+        font-weight: 700;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06rem;
+        color: var(--text-muted);
+        min-width: 5.5rem;
+        padding-top: 0.3rem;
+        flex-shrink: 0;
+    }
+    .skills-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .skill-tag {
+        display: inline-block;
+        padding: 0.22rem 0.75rem;
+        border-radius: 2rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+        border: 1px solid;
+        transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            transform 0.15s ease;
+        cursor: default;
+        user-select: none;
+    }
+    .skill-tag:hover {
+        transform: translateY(-1px);
+    }
+
+    .tag-frontend {
+        background: rgba(25, 118, 210, 0.08);
+        color: #1565c0;
+        border-color: rgba(25, 118, 210, 0.22);
+    }
+    .tag-frontend:hover {
+        background: #1976d2;
+        color: var(--white);
+    }
+    .tag-backend {
+        background: rgba(230, 81, 0, 0.07);
+        color: #e65100;
+        border-color: rgba(230, 81, 0, 0.22);
+    }
+    .tag-backend:hover {
+        background: #e65100;
+        color: var(--white);
+    }
+    .tag-devops {
+        background: rgba(46, 125, 50, 0.07);
+        color: #2e7d32;
+        border-color: rgba(46, 125, 50, 0.22);
+    }
+    .tag-devops:hover {
+        background: #2e7d32;
+        color: var(--white);
+    }
+    .tag-method {
+        background: rgba(106, 27, 154, 0.07);
+        color: #6a1b9a;
+        border-color: rgba(106, 27, 154, 0.22);
+    }
+    .tag-method:hover {
+        background: #6a1b9a;
+        color: var(--white);
+    }
+</style>
