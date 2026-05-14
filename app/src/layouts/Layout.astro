@@ -89,6 +89,17 @@ const jsonLd = {
 
         <!-- Structured data (Person schema) -->
         <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+        <!-- Apply saved theme before paint to prevent flash -->
+        <script is:inline>
+            (function () {
+                const saved = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (saved === 'dark' || (!saved && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+        </script>
     </head>
     <body id="page-top">
         <slot />
