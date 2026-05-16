@@ -4,6 +4,7 @@ services:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - ./app:/srv/app:rw,cached
+      - ./app:/srv/app
+      - /srv/app/node_modules
     ports:
       - "4321:4321"
